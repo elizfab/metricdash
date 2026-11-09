@@ -45,7 +45,7 @@ export interface AcaoTabela {
       <thead>
         <tr>
           @for (col of colunas(); track col.chave) {
-            <th [nzWidth]="col.largura" [nzAlign]="col.alinhar ?? 'left'">
+            <th [nzWidth]="col.largura ?? null" [nzAlign]="col.alinhar ?? 'left'">
               {{ col.titulo }}
             </th>
           }

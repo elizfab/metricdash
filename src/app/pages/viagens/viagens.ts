@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { DatePipe, DecimalPipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -31,7 +31,6 @@ import { MoedaPipe } from '../../shared/pipes/moeda.pipe';
   selector: 'app-viagens',
   imports: [
     DatePipe,
-    DecimalPipe,
     FormsModule,
     ReactiveFormsModule,
     NzTableModule,

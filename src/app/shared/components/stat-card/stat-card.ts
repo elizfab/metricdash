@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { MoedaPipe } from '../../pipes/moeda.pipe';
@@ -7,7 +8,7 @@ export type FormatoStatCard = 'moeda' | 'numero' | 'texto';
 
 @Component({
   selector: 'app-stat-card',
-  imports: [NzCardModule, NzIconModule, MoedaPipe],
+  imports: [NzCardModule, NzIconModule, MoedaPipe, DecimalPipe],
   template: `
     <nz-card class="stat-card" nzHoverable>
       <div class="stat-card__inner">

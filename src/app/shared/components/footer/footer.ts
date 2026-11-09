@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink, RouterLinkActive, NzMenuModule],
+  imports: [],
   template: `
     <footer class="app-footer">
       <span>MetricDash — Para quem ama métricas e indicadores.</span>

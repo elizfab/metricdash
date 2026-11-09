@@ -6,11 +6,10 @@ import { RelatorioService } from '../../core/services/relatorio.service';
 import { StatCard } from '../../shared/components/stat-card/stat-card';
 import { Loading } from '../../shared/components/loading/loading';
 import { ErrorState } from '../../shared/components/error-state/error-state';
-import { MoedaPipe } from '../../shared/pipes/moeda.pipe';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [NgxEchartsModule, StatCard, Loading, ErrorState, MoedaPipe],
+  imports: [NgxEchartsModule, StatCard, Loading, ErrorState],
   template: `
     <div class="dashboard">
       <h1 class="dashboard__titulo">Dashboard</h1>
