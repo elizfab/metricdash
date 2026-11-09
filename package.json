@@ -44,6 +44,7 @@
     "jest": "^30.5.2",
     "jest-environment-jsdom": "^30.5.2",
     "jest-preset-angular": "^17.0.3",
+    "less": "^4.9.1",
     "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
     "typescript": "~6.0.2",

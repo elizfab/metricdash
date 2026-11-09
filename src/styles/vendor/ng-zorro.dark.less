@@ -1,0 +1,55 @@
+// ---------------------------------------------------------------------------
+// MetricDash — Tema NG-ZORRO (Dark)
+// Baseado no tema oficial `ng-zorro-antd.dark.less` com a paleta MetricDash.
+// Referência: https://ng.ant.design/docs/customize-theme/en
+//
+// O Less utiliza avaliação preguiçosa: a ÚLTIMA definição de uma variável
+// vence para todos os usos, portanto os overrides abaixo substituem os valores
+// do tema oficial sem necessidade de editar arquivos do node_modules.
+// ---------------------------------------------------------------------------
+
+// 1) Tema oficial dark (define todas as variáveis de componentes)
+@import '../../../node_modules/ng-zorro-antd/ng-zorro-antd.dark.less';
+
+// ---------------------------------------------------------------------------
+// 2) Overrides — paleta oficial MetricDash (tema dark)
+// ---------------------------------------------------------------------------
+
+// Destaques
+@primary-color: #17b4da; // azul principal
+@primary-color-hover: #35c4e8;
+@primary-color-active: #0e8fb8;
+@link-color: @primary-color;
+@link-hover-color: @primary-color-hover;
+
+// Superfícies
+@body-background: #171725; // background principal
+@component-background: #242438; // cards / superfícies
+@popover-background: #2d2d43; // superfícies secundárias (dropdowns, modais, selects)
+@popover-customize-border-color: #38384f;
+@layout-body-background: #171725;
+@layout-header-background: #242438;
+@layout-sider-background: #242438;
+@menu-dark-bg: #242438;
+@menu-dark-inline-submenu-bg: #2d2d43;
+@table-header-bg: #2d2d43;
+@table-row-hover-bg: #2d2d43;
+@item-hover-bg: rgba(255, 255, 255, 0.06);
+
+// Textos
+@text-color: #fdf7fe;
+@text-color-secondary: #b8b8cc;
+@heading-color: #fdf7fe;
+
+// Bordas
+@border-color-base: #38384f;
+@border-color-split: #2d2d43;
+
+// Estados
+@success-color: #4ade80;
+@warning-color: #ffc506; // alertas e informações importantes
+@error-color: #e94d4d; // erros e situações críticas
+
+// Tipografia e forma
+@font-family: 'Open Sans', Roboto, Arial, sans-serif;
+@border-radius-base: 8px;

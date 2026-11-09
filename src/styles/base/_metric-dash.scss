@@ -1,0 +1,140 @@
+/*
+ * MetricDash — Design System
+ *
+ * Estrutura de tokens globais para os temas Dark e Light.
+ * A implementação deverá utilizar CSS Custom Properties.
+ * Cada variável deverá possuir valores correspondentes em ambos os temas.
+*/
+
+/* 1. SUPERFÍCIES E TEXTOS
+ * - Background principal da aplicação.
+ * - Background de superfícies secundárias.
+ * - Background dos cards.
+ * - Background do header.
+ * - Background da sidebar.
+ * - Texto principal.
+ * - Texto secundário.
+ * - Texto auxiliar.
+ * - Texto sobre superfícies escuras.
+ * - Bordas padrão.
+ * - Bordas de destaque.
+ */
+
+/* 2. ELEMENTOS DE INTERFACE
+ * - Links.
+ * - Links em estado hover.
+ * - Botões primários.
+ * - Botões primários em estado hover.
+ * - Botões secundários.
+ * - Botões secundários em estado hover.
+ * - Texto dos botões.
+ * - Ícones.
+ * - Background dos ícones.
+ */
+
+/* 3. ESTADOS E INDICADORES
+ * - Estado de sucesso.
+ * - Background do estado de sucesso.
+ * - Estado de atenção.
+ * - Background do estado de atenção.
+ * - Estado de erro.
+ * - Background do estado de erro.
+ * - Estado informativo.
+ * - Background do estado informativo.
+ */
+
+/* 4. COMPONENTES DO DASHBOARD
+ * - Superfícies dos cards de indicadores.
+ * - Superfícies dos cards de resumo.
+ * - Superfícies dos cards de métricas.
+ * - Bordas dos cards.
+ * - Textos dos indicadores.
+ * - Textos dos valores.
+ * - Textos auxiliares dos indicadores.
+ * - Elementos de destaque.
+ */
+
+/* 5. GRÁFICOS E VISUALIZAÇÃO DE DADOS
+ * - Elementos de destaque dos gráficos.
+ * - Séries de dados.
+ * - Elementos de comparação.
+ * - Linhas de referência.
+ * - Grades dos gráficos.
+ * - Rótulos dos eixos.
+ * - Legendas.
+ * - Indicadores positivos.
+ * - Indicadores negativos.
+ * - Indicadores neutros.
+ */
+
+/* 6. TABELAS
+ * - Background do cabeçalho.
+ * - Background das linhas.
+ * - Background das linhas alternadas.
+ * - Background das linhas em hover.
+ * - Texto do cabeçalho.
+ * - Texto das células.
+ * - Bordas das tabelas.
+ */
+
+/* 7. FORMULÁRIOS
+ * - Background dos campos.
+ * - Background dos campos desabilitados.
+ * - Texto dos campos.
+ * - Texto dos placeholders.
+ * - Bordas dos campos.
+ * - Bordas em estado de foco.
+ * - Bordas em estado de erro.
+ * - Background dos campos em estado de erro.
+ */
+
+/* 8. NAVEGAÇÃO
+ * - Background do header.
+ * - Background da sidebar.
+ * - Texto dos itens de navegação.
+ * - Ícones de navegação.
+ * - Background do item ativo.
+ * - Texto do item ativo.
+ * - Background dos itens em hover.
+ * - Bordas dos elementos de navegação.
+ */
+
+/* 9. ELEMENTOS DE SOBREPOSIÇÃO
+ * - Background dos modais.
+ * - Background dos popovers.
+ * - Background dos menus suspensos.
+ * - Background dos tooltips.
+ * - Bordas dos elementos de sobreposição.
+ * - Background do backdrop.
+ */
+
+/* 10. LAYOUT E DIMENSIONAMENTO
+ * - Border radius padrão.
+ * - Border radius pequeno.
+ * - Border radius grande.
+ * - Border radius para elementos arredondados.
+ * - Sombras pequenas.
+ * - Sombras médias.
+ * - Sombras grandes.
+ * - Largura máxima do container.
+ * - Espaçamento padrão.
+ * - Espaçamento horizontal do conteúdo.
+ * - Espaçamento vertical do conteúdo.
+ */
+
+/* 11. TEMAS
+ * - Implementar os mesmos tokens semânticos no tema Dark e no tema Light.
+ * - Utilizar o atributo data-theme para identificar o tema ativo.
+ * - Centralizar os valores dos tokens nos respectivos temas.
+ * - Não duplicar definições desnecessariamente.
+ * - Não utilizar valores de cores diretamente nos componentes.
+ * - Garantir consistência visual e contraste entre textos e superfícies.
+ */
+
+/* ☀️ Light mode — ativado por [data-theme="light"] no <html> (ThemeService) */
+:root {
+}
+
+/* 🌙 Dark mode — ativado por [data-theme="dark"] no <html> (ThemeService) */
+[data-theme='dark'] {
+}
