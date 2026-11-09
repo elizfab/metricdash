@@ -1,5 +1,3 @@
-import { StatusViagem } from './status-viagem.model';
-
 export interface Viagem {
   readonly id: string;
   dominio_id: string;
