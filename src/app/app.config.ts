@@ -8,6 +8,17 @@ import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { provideNzDateFnsAdapter } from 'ng-zorro-antd/core/time';
+import { provideEchartsCore } from 'ngx-echarts';
+import * as echarts from 'echarts/core';
+import { BarChart, LineChart, PieChart } from 'echarts/charts';
+import {
+  GridComponent,
+  LegendComponent,
+  TooltipComponent,
+} from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+
+echarts.use([BarChart, LineChart, PieChart, GridComponent, LegendComponent, TooltipComponent, CanvasRenderer]);
 
 registerLocaleData(en);
 
@@ -26,5 +37,6 @@ export const appConfig: ApplicationConfig = {
     }),
     provideNzI18n(en_US),
     provideNzDateFnsAdapter(),
+    provideEchartsCore({ echarts }),
   ],
 };
