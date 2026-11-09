@@ -1,0 +1,70 @@
+name: Auto PR
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  create-pr:
+    name: Criar Pull Request automaticamente
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4.2.2
+
+      - name: Verificar PR existente e criar se necessário
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+
+          EXISTING=$(gh pr list --head "$BRANCH" --state open --json number --jq 'length')
+          if [ "$EXISTING" -gt 0 ]; then
+            echo "Já existe um Pull Request aberto para a branch $BRANCH. Nenhuma ação necessária."
+            exit 0
+          fi
+
+          # Deriva um título descritivo em português a partir do nome da branch.
+          SLUG="${BRANCH#feature/}"
+          DESCRIPTION=$(echo "$SLUG" | tr '-' ' ')
+          TITLE="Funcionalidade: $DESCRIPTION"
+
+          BODY=$(cat <<'EOF'
+          ## Objetivo
+
+          Alterações da branch de funcionalidade. Descreva o motivo da alteração.
+
+          ## Alterações realizadas
+
+          - Liste as principais mudanças desta entrega.
+
+          ## Validações
+
+          - [ ] Build executado.
+          - [ ] Testes executados.
+          - [ ] ESLint executado.
+
+          ## Evidências
+
+          Adicionar screenshots quando aplicável.
+
+          ## Documentação
+
+          Informar os arquivos de documentação relacionados.
+          EOF
+          )
+
+          gh pr create \
+            --base develop \
+            --head "$BRANCH" \
+            --title "$TITLE" \
+            --body "$BODY"
+
+          echo "Pull Request criado para $BRANCH com destino develop."
