@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -6,11 +6,10 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   styles: [],
   template: `
-    <h1>Hello, {{ title() }}</h1>
+    <h1>Eu sou o Dash: MetricDash</h1>
+    <p>Para quem ama métricas e indicadores.</p>
 
     <router-outlet />
   `,
 })
-export class App {
-  protected readonly title = signal('metricdash');
-}
+export class App {}
