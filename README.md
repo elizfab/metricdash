@@ -1,59 +1,205 @@
-# Metricdash
+<div align="center">
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.3.
+# MetricDash
 
-## Development server
+### Plataforma para visualização, organização e acompanhamento de métricas, indicadores e informações financeiras.
 
-To start a local development server, run:
+> *"Eu sou o Dash: MetricDash — Para quem ama métricas e indicadores."*
 
-```bash
-ng serve
+</div>
+
+---
+
+## Sobre o projeto
+
+O **MetricDash** é uma plataforma frontend para visualização, organização e acompanhamento de métricas, indicadores e informações financeiras.
+
+### Objetivo
+
+Fornecer uma interface moderna, rápida e organizada para o acompanhamento de indicadores, preparada para evoluir com novos painéis e funcionalidades.
+
+---
+
+<main>
+
+## Stack tecnológica
+
+| Camada | Tecnologia |
+| ------ | ---------- |
+| Framework | Angular 22 (standalone, zoneless) |
+| Linguagem | TypeScript (strict) |
+| Estilos | Sass/SCSS + CSS Custom Properties |
+| Estado | NgRx (store, effects, entity, store-devtools) |
+| Componentes | NG-ZORRO + @ant-design/icons-angular |
+| Testes | Jest + jest-preset-angular |
+| Qualidade | ESLint (angular-eslint) + DangerJS |
+| E2E/Screenshots | Playwright |
+| CI/CD | GitHub Actions |
+| Fonte | Open Sans |
+
+### Ferramentas utilizadas
+
+- **Angular CLI 22.2.3** — scaffolding e build.
+- **NgRx 22.0.1** — gerenciamento de estado global.
+- **NG-ZORRO 22.2.0** — biblioteca de componentes.
+- **Jest 30.5.2** — testes unitários.
+- **ESLint 10.12** — lint e boas práticas.
+- **DangerJS 14.1.0** — governança de Pull Requests.
+- **Playwright 1.65.0** — automação de navegador (screenshots).
+- **Prettier 3.8** — formatação de código.
+
+## Estrutura de diretórios
+
+```text
+src/
+├── app/
+│   ├── core/
+│   │   ├── interceptors/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── types/
+│   │   └── enums/
+│   ├── shared/
+│   │   ├── components/
+│   │   └── types/
+│   ├── pages/
+│   │   ├── dashboard/
+│   │   ├── login/
+│   │   └── logout/
+│   ├── app.ts
+│   ├── app.config.ts
+│   └── app.routes.ts
+├── environments/
+│   ├── environment.ts
+│   └── environment.development.ts
+├── styles/
+│   ├── abstracts/
+│   ├── base/
+│   ├── themes/
+│   └── styles.scss
+├── index.html
+└── main.ts
+
+scripts/
+└── screenshots.mjs
+
+docs/
+└── setup-project/
+
+.github/
+└── workflows/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Como instalar
 
 ```bash
-ng generate component component-name
+git clone https://github.com/elizfab/metricdash.git
+cd metricdash
+npm ci
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Como executar
 
 ```bash
-ng generate --help
+npm start          # ng serve na porta 6080
+# ou
+ng serve --port 6080
 ```
 
-## Building
+Acesse `http://localhost:6080`.
 
-To build the project run:
+## Como testar
 
 ```bash
-ng build
+npm test               # executa a suíte Jest
+npm run test:watch     # modo watch
+npm run test:coverage  # com relatório de cobertura
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Como executar o lint
 
 ```bash
-ng test
+npm run lint
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Como executar os screenshots
 
 ```bash
-ng e2e
+npm run screenshots
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+> Os cenários de captura serão implementados em etapas futuras. No momento, o comando executa a estrutura inicial sem gerar imagens.
 
-## Additional Resources
+## Páginas e rotas
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Rota       | Página    |
+| ---------- | --------- |
+| `/`        | Apresentação inicial |
+| `/dashboard` | Dashboard |
+| `/login`   | Login     |
+| `/logout`  | Logout    |
+
+## Temas
+
+O tema inicial é **Dark**. O tema **Light** está preparado e pode ser ativado via atributo `data-theme="light"` no elemento `<html>` (sem seletor visual nesta etapa).
+
+</main>
+
+---
+
+## Convenções Git
+
+- **Branches:** `develop` é a base de integração; `main` é preservada. Branches de trabalho usam prefixos `feature/`, `fix/`, `chore/`, `docs/`, `hotfix/` e `refactor/` em kebab-case.
+- **Commits em português** com prefixos:
+
+```text
+funcionalidade:
+correcao:
+configuracao:
+documentacao:
+testes:
+refatoracao:
+```
+
+Exemplo: `configuracao: adiciona fonte Open Sans ao projeto`
+
+## Fluxo de branches
+
+```text
+feature/* ──push──▶ GitHub Actions cria PR automaticamente ──▶ develop
+fix/*, chore/*, docs/*, hotfix/*, refactor/* ──▶ PR manual ──▶ develop
+hotfix/* ──▶ PR ──▶ main (quando aplicável)
+```
+
+## Regras de Pull Requests
+
+- Título em português com prefixo padronizado (ex.: `Funcionalidade: ...`).
+- Descrição com as seções: Objetivo, Alterações realizadas, Validações, Evidências e Documentação.
+- O **DangerJS** valida automaticamente commits, nome da branch, título, descrição, tamanho do PR, lockfile, `console.log`/`TODO` e arquivos sensíveis.
+- O CI executa lint, testes Jest e build em todos os PRs.
+
+## Documentação técnica
+
+Toda instalação e configuração está documentada em [`docs/setup-project/`](docs/setup-project/):
+
+- `setup-git/` — fluxo Git e branches
+- `install-angular/` — inicialização do Angular
+- `install-ngrx/`, `install-ng-zorro/`, `install-jest/`, `install-eslint/` — ferramentas
+- `install-danger/` — DangerJS e automação de PRs
+- `install-playwright/` — screenshots
+- `setup-scss/`, `setup-themes/` — estilos e temas
+
+## Links
+
+- **Repositório:** https://github.com/elizfab/metricdash
+- [Angular](https://angular.dev/) · [NgRx](https://ngrx.io/) · [NG-ZORRO](https://ng.ant.design/) · [Jest](https://jestjs.io/) · [ESLint](https://eslint.org/) · [DangerJS](https://danger.systems/) · [Playwright](https://playwright.dev/)
+
+<footer>
+
+<div align="center">
+
+Feito com Angular, NgRx e muito café — *Para quem ama métricas e indicadores.*
+
+</div>
+
+</footer>
