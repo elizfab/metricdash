@@ -1,0 +1,34 @@
+// ---------------------------------------------------------------------------
+// MetricDash — Tema LIGHT
+// Mesmos tokens semânticos do tema dark, com paleta clara.
+// Ativado via atributo `data-theme="light"` no elemento <html>.
+// ---------------------------------------------------------------------------
+
+:root[data-theme='light'] {
+  // Superfícies
+  --color-background: #f4f4f8;
+  --color-header: #ffffff;
+  --color-sidebar: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #ececf2;
+  --color-border: #d8d8e4;
+
+  // Textos
+  --color-text-primary: #1c1c2e;
+  --color-text-secondary: #5c5c72;
+
+  // Destaques
+  --color-accent-pink: #c2549b;
+  --color-accent-blue: #0e8fb8;
+  --color-accent-blue-deep: #17405b;
+
+  // Ícones
+  --color-icon: #c2549b;
+  --color-icon-background: #f3e2f0;
+
+  // Estados
+  --color-warning: #d99a00;
+  --color-danger: #d33f3f;
+  --color-success: #2e9e5b;
+  --color-info: #0e8fb8;
+}

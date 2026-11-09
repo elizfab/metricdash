@@ -1,0 +1,41 @@
+// ---------------------------------------------------------------------------
+// MetricDash — Tokens e variáveis compartilhadas (Sass)
+// ---------------------------------------------------------------------------
+// Variáveis Sass para valores que NÃO dependem do tema ativo.
+// Cores e tokens semânticos ficam nas CSS Custom Properties definidas em
+// styles/themes/_dark-theme.scss e styles/themes/_light-theme.scss.
+
+// Tipografia
+$font-family-base: 'Open Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+
+$font-size-xs: 0.75rem; // 12px — textos auxiliares
+$font-size-sm: 0.875rem; // 14px — labels e textos secundários
+$font-size-md: 1rem; // 16px — texto padrão
+$font-size-lg: 1.125rem; // 18px — subtítulos
+$font-size-xl: 1.5rem; // 24px — títulos de seção
+$font-size-xxl: 2rem; // 32px — títulos de página
+
+$font-weight-regular: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.25;
+$line-height-base: 1.5;
+
+// Espaçamento
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-xxl: 3rem; // 48px
+
+// Bordas e formas
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-width: 1px;
+
+// Layout
+$header-height: 64px;
+$sidebar-width: 240px;

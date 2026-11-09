@@ -1,0 +1,98 @@
+// ---------------------------------------------------------------------------
+// MetricDash — Tipografia global (Open Sans)
+// Hierarquia: títulos, subtítulos, textos, labels, botões e auxiliares.
+// ---------------------------------------------------------------------------
+
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+// Títulos de página
+h1 {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: var(--color-text-primary);
+}
+
+h2 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: var(--color-text-primary);
+}
+
+// Subtítulos e títulos de seção
+h3 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tight;
+  color: var(--color-text-primary);
+}
+
+h4,
+h5,
+h6 {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: var(--color-text-primary);
+}
+
+// Texto padrão e ênfase
+p {
+  color: var(--color-text-secondary);
+}
+
+strong,
+b {
+  font-weight: $font-weight-bold;
+  color: var(--color-text-primary);
+}
+
+// Labels e textos auxiliares
+label,
+small,
+.text-secondary {
+  font-size: $font-size-sm;
+  color: var(--color-text-secondary);
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+}
+
+// Botões
+button,
+.btn {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tight;
+}
+
+a {
+  color: var(--color-accent-blue);
+}
+
+// Estados semânticos
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-info {
+  color: var(--color-info);
+}

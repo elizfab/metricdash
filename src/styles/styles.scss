@@ -1,0 +1,13 @@
+// ---------------------------------------------------------------------------
+// MetricDash — Ponto de entrada dos estilos globais
+// A fonte Open Sans é carregada via <link> no index.html.
+// Ordem: temas (tokens CSS) → reset → tipografia
+// ---------------------------------------------------------------------------
+
+// Tokens de tema (CSS Custom Properties)
+@use 'themes/dark-theme';
+@use 'themes/light-theme';
+
+// Base
+@use 'base/reset';
+@use 'base/typography';
