@@ -5,7 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "ng lint"
   },
   "private": true,
   "packageManager": "npm@11.19.1",
@@ -16,6 +20,12 @@
     "@angular/forms": "^22.2.0",
     "@angular/platform-browser": "^22.2.0",
     "@angular/router": "^22.2.0",
+    "@ant-design/icons-angular": "^22.1.1",
+    "@ngrx/effects": "^22.0.1",
+    "@ngrx/entity": "^22.0.1",
+    "@ngrx/store": "^22.0.1",
+    "@ngrx/store-devtools": "^22.0.1",
+    "ng-zorro-antd": "^22.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -23,7 +33,16 @@
     "@angular/build": "^22.2.3",
     "@angular/cli": "^22.2.3",
     "@angular/compiler-cli": "^22.2.0",
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "angular-eslint": "22.6.0",
+    "eslint": "^10.12.0",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
+    "jest-preset-angular": "^17.0.3",
     "prettier": "^3.8.1",
-    "typescript": "~6.0.2"
+    "ts-node": "^10.9.2",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "8.71.0"
   }
 }
