@@ -65,7 +65,7 @@ export interface AcaoTabela {
                     [ngTemplateOutletContext]="{ $implicit: linha }"
                   />
                 } @else {
-                  {{ linha[col.chave] }}
+                  {{ valorCelula(linha, col.chave) }}
                 }
               </td>
             }
@@ -97,7 +97,7 @@ export interface AcaoTabela {
     :host { display: block; }
   `,
 })
-export class DataTable<T extends Record<string, unknown>> {
+export class DataTable<T extends object> {
   readonly linhas = input.required<T[]>();
   readonly colunas = input.required<ColunaTabela[]>();
   readonly acoes = input<AcaoTabela[]>([]);
@@ -111,5 +111,9 @@ export class DataTable<T extends Record<string, unknown>> {
 
   executarAcao(chave: string, linha: T): void {
     this.acao.emit({ chave, linha });
+  }
+
+  valorCelula(linha: T, chave: string): unknown {
+    return (linha as Record<string, unknown>)[chave];
   }
 }
