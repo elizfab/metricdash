@@ -101,13 +101,63 @@ Validação dos workflows: parse YAML (`python3 -c "import yaml; yaml.safe_load(
 - `npx eslint dangerfile.ts` → sem erros.
 - YAMLs validados com parser; script shell do `auto-pr.yml` validado com `bash -n`.
 
-## 11. Limitações
+## 11. O que preencher manualmente ao abrir um Pull Request
+
+> **Atenção:** o DangerJS apenas **valida** — quem preenche título e descrição é o autor do PR. Siga sempre os passos abaixo ao abrir um PR manualmente (PRs de `feature/*` são criados automaticamente pelo workflow `auto-pr.yml`, mas ainda assim o título e a descrição podem ser ajustados antes do merge).
+
+### 11.1 Escolher a branch correta
+
+| Prefixo | Quando usar | PR automático? |
+| ------- | ----------- | -------------- |
+| `feature/` | Novas funcionalidades | Sim (para `develop`) |
+| `fix/` | Correções de bugs | Não — abrir manualmente |
+| `chore/` | Configurações e manutenção | Não — abrir manualmente |
+| `docs/` | Documentação | Não — abrir manualmente |
+| `hotfix/` | Correções urgentes | Não — abrir manualmente (pode mirar `main`) |
+| `refactor/` | Refatorações | Não — abrir manualmente |
+
+Nunca abra PR a partir de `main` ou `develop` — o Danger reprova.
+
+### 11.2 Título do PR
+
+Formato obrigatório: `<Prefixo em português>: <descrição clara do objetivo>`.
+
+Prefixos aceitos: `Funcionalidade:`, `Correção:` (ou `Correcao:`), `Configuração:` (ou `Configuracao:`), `Documentação:` (ou `Documentacao:`), `Testes:`, `Refatoração:` (ou `Refatoracao:`).
+
+Exemplos válidos:
+
+```text
+Funcionalidade: criação da estrutura inicial do dashboard
+Configuração: instalação e configuração do Jest
+Correção: ajuste na configuração das rotas
+Documentação: criação do guia de instalação do projeto
+```
+
+Títulos genéricos (`Develop`, `Update`, `Ajustes`) ou em inglês são reprovados.
+
+### 11.3 Descrição do PR
+
+Ao abrir o PR no GitHub, o arquivo `.github/pull_request_template.md` é carregado automaticamente no corpo do PR. **Preencha todas as seções antes de submeter:**
+
+- **Objetivo** — motivo da alteração (obrigatório).
+- **Alterações realizadas** — lista das mudanças (obrigatório).
+- **Validações** — marque os checks executados de fato (`npm run build`, `npm test`, `npm run lint`).
+- **Evidências** — screenshots/logs quando aplicável.
+- **Documentação** — arquivos de `docs/` relacionados. Alterações em arquivos de configuração sem doc em `docs/` geram warning do Danger.
+
+### 11.4 Destino do PR
+
+- Base padrão: `develop`.
+- Apenas branches `hotfix/*` podem ter `main` como destino.
+- A sincronização `develop` → `main` é feita pelo mantenedor fora do fluxo de PRs (merge direto), pois `develop` é branch protegida.
+
+## 12. Limitações
 
 - A criação real de PR pelo workflow `auto-pr.yml` só pode ser validada em um push real de branch `feature/*` no GitHub — não foi simulada (conforme orientação do documento).
 - `danger ci` requer contexto de Pull Request; localmente usa-se `danger local`.
 - A detecção de idioma é heurística (prefixo obrigatório + presença de acentuação/palavras em português).
 
-## 12. Possíveis problemas e soluções
+## 13. Possíveis problemas e soluções
 
 | Problema | Solução |
 | -------- | ------- |

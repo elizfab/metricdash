@@ -32,8 +32,12 @@ jobs:
           fi
 
           # Deriva um título descritivo em português a partir do nome da branch.
+          # O Danger exige descrição com pelo menos 10 caracteres após o prefixo.
           SLUG="${BRANCH#feature/}"
           DESCRIPTION=$(echo "$SLUG" | tr '-' ' ')
+          if [ "${#DESCRIPTION}" -lt 10 ]; then
+            DESCRIPTION="$BRANCH"
+          fi
           TITLE="Funcionalidade: $DESCRIPTION"
 
           BODY=$(cat <<'EOF'

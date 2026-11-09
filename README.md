@@ -173,9 +173,11 @@ hotfix/* ──▶ PR ──▶ main (quando aplicável)
 
 ## Regras de Pull Requests
 
-- Título em português com prefixo padronizado (ex.: `Funcionalidade: ...`).
-- Descrição com as seções: Objetivo, Alterações realizadas, Validações, Evidências e Documentação.
-- O **DangerJS** valida automaticamente commits, nome da branch, título, descrição, tamanho do PR, lockfile, `console.log`/`TODO` e arquivos sensíveis.
+- **Template obrigatório:** ao abrir um PR, o GitHub carrega automaticamente `.github/pull_request_template.md` — preencha **todas** as seções (Objetivo, Alterações realizadas, Validações, Evidências, Documentação).
+- Título em português com prefixo padronizado (ex.: `Funcionalidade: ...`). Exemplos: `Funcionalidade: criação do dashboard`, `Configuração: instalação do Jest`, `Correção: ajuste nas rotas`.
+- Branches de origem: `feature/`, `fix/`, `chore/`, `docs/`, `hotfix/`, `refactor/` — nunca `main` ou `develop`.
+- Destino: `develop` (apenas `hotfix/*` pode mirar `main`).
+- O **DangerJS** valida automaticamente commits, nome da branch, título, descrição, tamanho do PR, lockfile, `console.log`/`TODO` e arquivos sensíveis — veja `docs/setup-project/install-danger/passo-01.md` §11 para o passo a passo do que preencher.
 - O CI executa lint, testes Jest e build em todos os PRs.
 
 ## Documentação técnica
