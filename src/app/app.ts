@@ -5,11 +5,6 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   selector: 'app-root',
   styles: [],
-  template: `
-    <h1>Eu sou o Dash: MetricDash</h1>
-    <p>Para quem ama métricas e indicadores.</p>
-
-    <router-outlet />
-  `,
+  template: ` <router-outlet /> `,
 })
 export class App {}
